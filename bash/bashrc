@@ -67,7 +67,7 @@ PATH=""
 for prefix in "${HOME}/.local" "/usr/local" "/usr"; do
     PATH="${PATH}:${prefix}/sbin:${prefix}/bin:${prefix}/games"
 done
-PATH="${PATH}/sbin:/bin"
+PATH="${PATH}:/sbin:/bin"
 
 if type vim >/dev/null 2>&1; then
     EDITOR=vim
@@ -91,7 +91,7 @@ for file in `ls "${HOME}"/.bashrc.d/*.sh`; do
     source "${file}"
 done
 
-# Load also the .bashrc file
+# Load also the .bashrc_local file
 if [[ -f "${HOME}/.bashrc_local" ]]; then
     source "${HOME}/.bashrc_local"
 fi
