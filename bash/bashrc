@@ -1,0 +1,97 @@
+# Pietro Albini's .bashrc file
+# Feel free to use this or some parts of this as you want :-)
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Setup bash
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+shopt -s histappend
+shopt -s checkwinsize  # Check windows size every command
+shopt -s globstar  # Enable **
+
+
+# Customize the PS1, adding callbacks to add things before and after it
+# Use bashrc_ps1_before and bashrc_ps1_after to do so
+
+_bashrc_ps1_before=()
+_bashrc_ps1_after=()
+
+bashrc_ps1_before() {
+    _bashrc_ps1_before=("${_bashrc_ps1_before[@]}" "$1")
+}
+
+bashrc_ps1_after() {
+    _bashrc_ps1_after+=("${_bashrc_ps1_after[@]}" "$1")
+}
+
+
+# Dynamically generate the prompt
+# You can set $PS1_SIMULATE_ROOT to simulate the root prompt
+# Use bashrc_ps1_before and bashrc_ps1_after to add before and after callbacks
+bashrc_ps1_build() {
+    for extra in "${_bashrc_ps1_before[@]}"; do
+        eval ${extra}
+    done
+
+    if [[ $EUID -eq 0 ]] || [[ ! -z "${PS1_SIMULATE_ROOT}" ]]; then
+        echo -ne "\e[1;35m`hostname`\e[m"
+    else
+        echo -ne "\e[1;36m`whoami`@`hostname`\e[m"
+    fi
+
+    echo -ne ": "
+    echo -ne "\e[1;34m`pwd | sed "s%${HOME}%~%"`\e[m"
+
+    for extra in "${_bashrc_ps1_after[@]}"; do
+        eval ${extra}
+    done
+
+    if [[ $EUID -eq 0 ]] || [[ ! -z "${PS1_SIMULATE_ROOT}" ]]; then
+        echo -ne "# "
+    else
+        echo -ne "$ "
+    fi
+}
+
+
+PS1='`bashrc_ps1_build`'
+
+# Dynamically build the $PATH
+PATH=""
+for prefix in "${HOME}/.local" "/usr/local" "/usr"; do
+    PATH="${PATH}:${prefix}/sbin:${prefix}/bin:${prefix}/games"
+done
+PATH="${PATH}/sbin:/bin"
+
+if type vim >/dev/null 2>&1; then
+    EDITOR=vim
+else
+    EDITOR=vi
+fi
+
+# Add some colors around
+eval "$(dircolors -b)"
+alias ls='ls --group-directories-first --color=auto'
+alias grep='grep --color'
+
+# Some aliases
+alias ls='ls --group-directories-first --color=auto'
+alias ll='ls -al'
+alias l='ls'
+alias rebash="source ~/.bashrc"
+
+# Load extra scripts from .bashrc.d
+for file in `ls "${HOME}"/.bashrc.d/*.sh`; do
+    source "${file}"
+done
+
+# Load also the .bashrc file
+if [[ -f "${HOME}/.bashrc_local" ]]; then
+    source "${HOME}/.bashrc_local"
+fi
