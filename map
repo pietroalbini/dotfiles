@@ -5,3 +5,6 @@
 
 bash/bashrc  ~/.bashrc
 bash/bashrc.d  ~/.bashrc.d
+
+git/config  ~/.gitconfig
+git/ignore  ~/.gitignore

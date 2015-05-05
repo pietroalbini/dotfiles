@@ -1,0 +1,5 @@
+[user]
+    name = Pietro Albini
+    email = pietro@pietroalbini.io
+[core]
+    excludesfile = /home/pietro/.gitignore
