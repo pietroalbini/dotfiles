@@ -34,33 +34,39 @@ bashrc_ps1_after() {
 # Dynamically generate the prompt
 # You can set $PS1_SIMULATE_ROOT to simulate the root prompt
 # Use bashrc_ps1_before and bashrc_ps1_after to add before and after callbacks
-bashrc_ps1_build() {
+bashrc_ps1_rebuild() {
+    # REMEMBER: put color codes between "\[" and "\]"!
+
+    PS1=""
+
     for extra in "${_bashrc_ps1_before[@]}"; do
-        eval ${extra}
+        PS1+="`eval ${extra}`"
     done
 
     if [[ $EUID -eq 0 ]] || [[ ! -z "${PS1_SIMULATE_ROOT}" ]]; then
-        echo -ne "\e[1;35m`hostname`\e[m"
+        PS1+="\[\e[1;35m\]`hostname`\[\e[m\]"
     else
-        echo -ne "\e[1;36m`whoami`@`hostname`\e[m"
+        PS1+="\[\e[1;36m\]`whoami`@`hostname`\[\e[m\]"
     fi
 
-    echo -ne ": "
-    echo -ne "\e[1;34m`pwd | sed "s%${HOME}%~%"`\e[m"
+    PS1+=": "
+    PS1+="\[\e[1;34m\]`pwd | sed "s%${HOME}%~%"`\[\e[m\]"
 
     for extra in "${_bashrc_ps1_after[@]}"; do
-        eval ${extra}
+        PS1+="`eval ${extra}`"
     done
 
     if [[ $EUID -eq 0 ]] || [[ ! -z "${PS1_SIMULATE_ROOT}" ]]; then
-        echo -ne "# "
+        PS1+="# "
     else
-        echo -ne "$ "
+        PS1+="$ "
     fi
+
+    export PS1
 }
 
 
-PS1='`bashrc_ps1_build`'
+PROMPT_COMMAND="bashrc_ps1_rebuild"
 
 # Dynamically build the $PATH
 PATH=""
