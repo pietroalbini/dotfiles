@@ -1,3 +1,8 @@
+" My own vim configuration file
+"
+" Script made by Pietro Albini <pietro@pietroalbini.io>
+" Released under the UNLICENSE license, aka public domain
+
 syntax on
 filetype indent plugin on
 set nocompatible
