@@ -28,9 +28,9 @@ contains quite a few nested submodules, and it will require compilation of some
 binary vim extensions (vimproc and youcompleteme).
 
 Because of that, the first time you apply the dotfiles you may need to install
-some dependencies, which are a C compiler, Python 2 and some headers. You can
-install them in Debian/Ubuntu with the following command::
+some dependencies, which are a C compiler, cmake, Python 2 and some headers.
+You can install them in Debian/Ubuntu with the following command::
 
-   $ apt install build-essentials python python-dev
+   $ apt install build-essentials cmake python python-dev
 
 .. _UNLICENSE: http://unlicense.org/
