@@ -1,4 +1,7 @@
 " Here there are my mappings
+"
+" Script made by Pietro Albini <pietro@pietroalbini.io>
+" Released under the UNLICENSE license, aka public domain
 
 " Setup mapping
 let mapleader = "-"

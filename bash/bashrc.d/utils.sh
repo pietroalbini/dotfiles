@@ -1,6 +1,7 @@
 # This script contains some utilities I use
-# Feel free to use this or some parts of this as you want :-)
-
+#
+# Script made by Pietro Albini <pietro@pietroalbini.io>
+# Released under the UNLICENSE license, aka public domain
 
 # Generate a random string
 # For the usage, see: randstr -h

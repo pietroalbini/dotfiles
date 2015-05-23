@@ -1,3 +1,8 @@
+" My own, personal vim theme
+"
+" Theme made by Pietro Albini <pietro@pietroalbini.io>
+" Released under the UNLICENSE license, aka public domain
+
 set background=dark
 let g:colors_name = "pietroalbini"
 

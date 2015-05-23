@@ -1,7 +1,9 @@
 # This script will override the cd builtin, so when you switch to a directory
 # containing a Python virtual environment, it will be activated.
 #
-# Feel free to use this or some parts of this as you want :-)
+# Script made by Pietro Albini <pietro@pietroalbini.io>
+# Released under the UNLICENSE license, aka public domain
+
 
 # Get the nearest environment
 function nearest_venv () {

@@ -1,5 +1,7 @@
 # This script will setup git completion and the git prompt
-# Feel free to use this or some parts of this as you want :-)
+#
+# Script made by Pietro Albini <pietro@pietroalbini.io>
+# Released under the UNLICENSE license, aka public domain
 
 # Require external scripts
 source "${HOME}/.bashrc.d/external/git-completion.sh"
