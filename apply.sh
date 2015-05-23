@@ -14,6 +14,9 @@ done
 directory="$( cd "$( dirname "${source}" )" && pwd )"
 filename="$( basename "${source}" )"
 
+# Update submodules
+git submodule update --init --recursive
+
 # Parse the map file
 while read -r line; do
     # Remove comments
@@ -30,3 +33,10 @@ while read -r line; do
     fi
 
 done < "${directory}/${MAP_FILE}"
+
+# Call extra things
+# Done in a separate script so you can use this script without changing it
+# even in other repositories :)
+if [[ -f "${directory}/after.sh" ]]; then
+    DOTFILES="${directory}" bash "${directory}/after.sh"
+fi

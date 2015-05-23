@@ -8,3 +8,6 @@ bash/bashrc.d  ~/.bashrc.d
 
 git/gitconfig  ~/.gitconfig
 git/gitignore  ~/.gitignore
+
+vim  ~/.vim
+vim/vimrc  ~/.vimrc
