@@ -9,5 +9,5 @@ syn region pythonDocstring  start=+^\s*[uU]\?[bB]\?[rR]\?'''+ end=+'''+ keepend 
 hi link pythonDocstring Comment
 
 " Highlight True, False and None as types
-syn keyword pythonBoolean   False, None, True
+syn keyword pythonBoolean   False None True
 hi link pythonBoolean Type
