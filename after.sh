@@ -48,9 +48,3 @@ if needs_build "vim/bundle/vimproc"; then
     make -C "${DOTFILES}/vim/bundle/vimproc"
     as_built "vim/bundle/vimproc"
 fi
-
-# Compile YouCompleteMe
-if needs_build "vim/bundle/youcompleteme"; then
-    "${DOTFILES}/vim/bundle/youcompleteme/install.sh"
-    as_built "vim/bundle/youcompleteme"
-fi

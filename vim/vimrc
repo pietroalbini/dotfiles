@@ -68,7 +68,4 @@ nnoremap <leader>rc :vsplit $MYVIMRC<cr>:autocmd BufWritePost $MYVIMRC :bd<cr>
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
-" Some configuration for youcompleteme
-let g:ycm_autoclose_preview_window_after_completion = 1
-
 call s:source("mappings.vim")
