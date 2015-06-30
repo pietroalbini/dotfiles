@@ -3,3 +3,5 @@
     email = pietro@pietroalbini.io
 [core]
     excludesfile = ~/.gitignore
+[push]
+    default = simple
