@@ -21,6 +21,9 @@ execute pathogen#infect()
 " Yes, I use this sometimes...
 set mouse=a
 
+" Truncate too long lines
+set textwidth=79
+
 " Line numbers
 set number
 set numberwidth=5
