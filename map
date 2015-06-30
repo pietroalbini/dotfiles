@@ -11,3 +11,5 @@ git/gitignore  ~/.gitignore
 
 vim  ~/.vim
 vim/vimrc  ~/.vimrc
+
+ssh/config  ~/.ssh/config

@@ -1,0 +1,8 @@
+# my own personal box
+Host winter
+    HostName winter.pietroalbini.io
+    ForwardAgent yes
+
+# code.ubuntu-it.org runs on a different port
+Host code.ubuntu-it.org
+    Port 22
