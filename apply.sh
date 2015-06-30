@@ -31,6 +31,7 @@ while read -r line; do
         dest="`echo "${items[1]}" | sed "s%~%${HOME}%"`"
 
         rm -rf "${dest}"
+        mkdir -p "$( dirname "${dest}" )"
         ln -s "${directory}/${origin}" "${dest}"
     fi
 
