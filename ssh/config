@@ -5,4 +5,4 @@ Host winter
 
 # code.ubuntu-it.org runs on a different port
 Host code.ubuntu-it.org
-    Port 22
+    Port 2222
