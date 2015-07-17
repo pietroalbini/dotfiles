@@ -6,3 +6,8 @@ Host winter
 # code.ubuntu-it.org runs on a different port
 Host code.ubuntu-it.org
     Port 2222
+
+# fix username and add a pretty host to the ubuntu-it box
+Host roadhouse
+    HostName roadhouse.ubuntu-it.org
+    User pietroalbini
