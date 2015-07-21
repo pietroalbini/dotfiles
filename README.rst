@@ -28,9 +28,12 @@ contains quite a few nested submodules, and it will require compilation of some
 binary vim extensions (vimproc and youcompleteme).
 
 Because of that, the first time you apply the dotfiles you may need to install
-some dependencies, which are a C compiler, cmake, Python 2 and some headers.
-You can install them in Debian/Ubuntu with the following command::
+a C compiler. You can install it in Debian/Ubuntu with the following command::
 
-   $ apt install build-essentials cmake python python-dev
+   $ apt install build-essentials
+
+Also, in order to get the best from unite.vim, you need ``ag``::
+
+   $ apt install silversearcher-ag
 
 .. _UNLICENSE: http://unlicense.org/
