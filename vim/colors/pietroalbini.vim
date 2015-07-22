@@ -47,3 +47,11 @@ hi link cssClassName Statement
 hi link cssIdentifier Statement
 hi cssProp ctermfg=147 ctermbg=NONE
 hi link cssAttr Identifier
+
+" Bash syntax
+hi link PreProc Type
+hi link shQuote shString
+hi link shShellVariables Type
+hi link shDeref shShellVariables
+hi link shDerefOp shDeref
+hi link shVariable Type
