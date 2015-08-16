@@ -1,0 +1,26 @@
+[global_config]
+  focus = mouse
+  title_inactive_fg_color = "#ffffff"
+  suppress_multiple_term_dialog = True
+  title_receive_bg_color = "#222222"
+  title_transmit_bg_color = "#222222"
+  title_inactive_bg_color = "#222222"
+[profiles]
+  [[default]]
+    use_system_font = False
+    cursor_shape = ibeam
+    background_image = None
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    font = Monospace 9
+    background_color = "#111111"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

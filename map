@@ -13,3 +13,5 @@ vim  ~/.vim
 vim/vimrc  ~/.vimrc
 
 ssh/config  ~/.ssh/config
+
+terminator  ~/.config/terminator
