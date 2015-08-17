@@ -5,3 +5,11 @@
     excludesfile = ~/.gitignore
 [push]
     default = simple
+
+# Specific configuration for GitHub
+[url "git@github.com:"]
+    # A pretty alias
+    insteadof = "github:"
+
+    # Prevent fetching from HTTPS -- only SSH
+    insteadof = "https://github.com/"
