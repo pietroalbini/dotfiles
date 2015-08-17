@@ -1,2 +1,5 @@
 # VIM swap files
 .*.sw[op]
+
+# pyenv version files
+.python-version
