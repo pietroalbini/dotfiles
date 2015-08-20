@@ -3,6 +3,7 @@
     email = pietro@pietroalbini.io
 [core]
     excludesfile = ~/.gitignore
+    editor = vim
 [push]
     default = simple
 
