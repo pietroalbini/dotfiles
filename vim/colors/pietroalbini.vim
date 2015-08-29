@@ -48,10 +48,19 @@ hi link cssIdentifier Statement
 hi cssProp ctermfg=147 ctermbg=NONE
 hi link cssAttr Identifier
 
-" Bash syntax
-hi link PreProc Type
+" bash syntax
 hi link shQuote shString
 hi link shShellVariables Type
+hi link PreProc Type
 hi link shDeref shShellVariables
-hi link shDerefOp shDeref
-hi link shVariable Type
+hi link shDerefOp shShellVariables
+hi link shDerefDelim shShellVariables
+
+" JavaScript syntax
+hi link javaScriptIdentifier Keyword
+hi link javaScriptFunction Keyword
+hi link javaScriptGlobal Identifier
+hi link javaScriptMember Identifier
+hi link javaScriptNull Type
+hi link javaScriptBoolean Type
+hi link javaScriptNumber Constant
