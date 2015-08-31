@@ -13,7 +13,7 @@
     background_image = None
     foreground_color = "#ffffff"
     show_titlebar = False
-    font = Monospace 9
+    font = Hack 9
     background_color = "#111111"
     scrollback_infinite = True
 [layouts]
