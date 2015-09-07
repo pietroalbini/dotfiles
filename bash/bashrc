@@ -93,7 +93,14 @@ alias ls='ls --group-directories-first --color=auto'
 alias ll='ls -al'
 alias l='ls'
 alias c='clear'
+alias v='vim'
 alias rebash="source ~/.bashrc"
+
+# git aliases
+alias g='git'
+alias gd='git diff'
+alias gs='git status'
+alias gco='git commit'
 
 # Load extra scripts from .bashrc.d
 for file in `ls "${HOME}"/.bashrc.d/*.sh`; do
