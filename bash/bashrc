@@ -100,6 +100,7 @@ alias rebash="source ~/.bashrc"
 alias g='git'
 alias gd='git diff'
 alias gs='git status'
+alias ga='git add'
 alias gco='git commit'
 
 # Load extra scripts from .bashrc.d
