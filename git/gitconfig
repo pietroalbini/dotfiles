@@ -6,6 +6,8 @@
     editor = vim
 [push]
     default = simple
+[alias]
+    unstage = reset HEAD
 
 # Specific configuration for GitHub
 [url "git@github.com:"]
