@@ -70,3 +70,14 @@ hi link javaScriptNumber Constant
 hi link yamlBlockMappingKey Type
 hi link yamlBlockCollectionItemStart Type
 hi link yamlKeyValueDelimiter Type
+
+" git commit syntax
+hi link gitcommitFile Identifier
+hi link gitcommitSelected String
+hi link gitcommitSelectedType String
+hi link gitcommitDiscarded Comment
+hi link gitcommitDiscardedType Comment
+
+" I know I shouldn't do this, but that's the only way to remove colors on the
+" header of a section, unfortunately
+autocmd FileType gitcommit :syntax clear gitcommitHeader
