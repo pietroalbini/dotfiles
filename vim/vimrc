@@ -36,17 +36,19 @@ color pietroalbini  " My own color scheme
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+set tabstop=4
 set smarttab
 set smartindent
 autocmd FileType rst :setlocal shiftwidth=3 softtabstop=3
 autocmd FileType yaml :setlocal shiftwidth=2 softtabstop=2
-autocmd FileType make :setlocal noexpandtab shiftwidth=8 softtabstop=8
+autocmd FileType make :setlocal noexpandtab
 
 " Some search settings
 set incsearch  " Start searching as of typing
 
 " Highlight trailing whitespaces
-set list listchars=trail:·
+set list
+set listchars=trail:·,tab:\ \ 
 hi SpecialKey ctermfg=9 ctermbg=NONE
 
 " Adjust splits positions
