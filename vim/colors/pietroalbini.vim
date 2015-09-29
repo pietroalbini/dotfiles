@@ -26,6 +26,7 @@ hi Identifier ctermfg=15 ctermbg=NONE
 hi Statement ctermfg=221 ctermbg=NONE
 hi PreProc ctermfg=221 ctermbg=NONE
 hi Type ctermfg=74 ctermbg=NONE
+hi Special ctermfg=99 ctermbg=NONE
 
 hi String ctermfg=83 ctermbg=NONE
 hi link Character String
@@ -64,3 +65,8 @@ hi link javaScriptMember Identifier
 hi link javaScriptNull Type
 hi link javaScriptBoolean Type
 hi link javaScriptNumber Constant
+
+" YAML syntax
+hi link yamlBlockMappingKey Type
+hi link yamlBlockCollectionItemStart Type
+hi link yamlKeyValueDelimiter Type
