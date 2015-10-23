@@ -22,3 +22,6 @@
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule "vim/bundle/gitgutter"]
+	path = vim/bundle/gitgutter
+	url = https://github.com/airblade/vim-gitgutter
