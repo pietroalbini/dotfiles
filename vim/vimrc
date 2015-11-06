@@ -82,7 +82,7 @@ endif
 " Some configuration for gitgutter
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_modified = "|"
-let g:gitgutter_sign_modified_removed = "|_"
+let g:gitgutter_sign_modified_removed = "|"
 hi GitGutterAdd cterm=bold ctermfg=83 ctermbg=NONE
 hi GitGutterChange cterm=bold ctermfg=221 ctermbg=NONE
 hi GitGutterDelete cterm=bold ctermfg=160 ctermbg=NONE
