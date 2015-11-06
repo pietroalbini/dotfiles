@@ -108,6 +108,11 @@ alias gs='git status'
 alias ga='git add'
 alias gco='git commit'
 
+# lxc aliases
+alias lxcl='lxc-ls --fancy'
+alias lxcsta='lxc-start -d -n'
+alias lxcsto='lxc-stop -n'
+
 # Load extra scripts from .bashrc.d
 for file in `ls "${HOME}"/.bashrc.d/*.sh`; do
     source "${file}"
