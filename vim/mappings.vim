@@ -15,6 +15,9 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 vnoremap <leader>' <esc>`<i'<esc>`>lli'<esc>
 vnoremap <leader>" <esc>`<i"<esc>`>lli"<esc>
 
+" <leader>w will rewrap the current paragraph
+nnoremap <leader>w vipgq
+
 " H will move you to the start of the line, and L to the end
 nnoremap H V<esc>`<
 nnoremap L V<esc>`>

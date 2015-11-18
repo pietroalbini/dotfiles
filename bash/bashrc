@@ -70,6 +70,10 @@ bashrc_ps1_rebuild() {
 
 PROMPT_COMMAND="bashrc_ps1_rebuild"
 
+# Use the English language
+export LANG="en_US.utf8"
+export LC_ALL="en_US.utf8"
+
 # Dynamically build the $PATH
 PATH=""
 for prefix in "${HOME}/.local" "/usr/local" "/usr"; do
@@ -99,9 +103,15 @@ alias rebash="source ~/.bashrc"
 # git aliases
 alias g='git'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gs='git status'
 alias ga='git add'
 alias gco='git commit'
+
+# lxc aliases
+alias lxcl='lxc-ls --fancy'
+alias lxcsta='lxc-start -d -n'
+alias lxcsto='lxc-stop -n'
 
 # Load extra scripts from .bashrc.d
 for file in `ls "${HOME}"/.bashrc.d/*.sh`; do

@@ -1,11 +1,16 @@
 [global_config]
+  focus = mouse
+  suppress_multiple_term_dialog = True
   title_receive_bg_color = "#222222"
   title_transmit_bg_color = "#222222"
-  title_inactive_fg_color = "#ffffff"
-  focus = mouse
   title_inactive_bg_color = "#222222"
-  suppress_multiple_term_dialog = True
 [keybindings]
+  split_vert = <Shift><Super>Right
+  split_horiz = <Shift><Super>Down
+  go_up = <Super>Up
+  go_down = <Super>Down
+  go_right = <Super>Right
+  go_left = <Super>Left
 [profiles]
   [[default]]
     scrollbar_position = hidden

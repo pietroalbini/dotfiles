@@ -18,6 +18,7 @@ hi CursorLineNr ctermfg=15 ctermbg=235
 hi ColorColumn ctermfg=15 ctermbg=235
 hi Visual ctermbg=236
 hi CursorLine ctermbg=235 cterm=NONE
+hi SignColumn ctermbg=234
 
 " General syntax
 hi Comment ctermfg=240 ctermbg=NONE
