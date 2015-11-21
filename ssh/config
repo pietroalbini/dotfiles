@@ -11,3 +11,8 @@ Host code.ubuntu-it.org
 Host roadhouse
     HostName roadhouse.ubuntu-it.org
     User pietroalbini
+
+# Fix username and add a pretty host to the canonical box
+Host magog
+    HostName magog.canonical.com
+    User pietroalbini
