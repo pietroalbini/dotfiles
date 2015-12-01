@@ -1,5 +1,4 @@
 [global_config]
-  focus = mouse
   suppress_multiple_term_dialog = True
   title_receive_bg_color = "#222222"
   title_transmit_bg_color = "#222222"
