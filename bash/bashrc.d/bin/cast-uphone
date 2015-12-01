@@ -1,3 +1,4 @@
+#!/bin/bash
 # This script provides a command to cast your Ubuntu Phone to the desktop via
 # SSH and wifi.
 #
@@ -5,7 +6,7 @@
 # Released under the UNLICENSE license, aka public domain
 
 
-cast-uphone () {
+cast-uphone-command () {
 
     # Option parsing thing
     show_help=false
@@ -81,3 +82,6 @@ cast-uphone () {
             "fps=${fps}:w=${resx}:h=${resy}:format=rgba" -
 
 }
+
+
+cast-uphone-command $@

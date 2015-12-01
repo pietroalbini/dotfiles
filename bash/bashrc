@@ -75,7 +75,7 @@ export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
 
 # Dynamically build the $PATH
-PATH=""
+PATH="${HOME}/.bashrc.d/bin:"
 for prefix in "${HOME}/.local" "/usr/local" "/usr"; do
     PATH="${PATH}:${prefix}/sbin:${prefix}/bin:${prefix}/games"
 done
