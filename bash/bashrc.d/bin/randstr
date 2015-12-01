@@ -1,11 +1,10 @@
+#!/bin/bash
 # This script contains some utilities I use
 #
 # Script made by Pietro Albini <pietro@pietroalbini.io>
 # Released under the UNLICENSE license, aka public domain
 
-# Generate a random string
-# For the usage, see: randstr -h
-randstr() {
+randstr-command() {
 
     # Do options parsing
     show_help=false
@@ -58,3 +57,6 @@ randstr() {
     cat /dev/urandom | tr -cd "${filter}" | head -c "${length}"
     echo
 }
+
+
+randstr-command $@
