@@ -129,9 +129,13 @@ if [[ -f "${HOME}/.bashrc_local" ]]; then
     source "${HOME}/.bashrc_local"
 fi
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-    source "${HOME}/.gpg-agent-info"
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
+# Be sure the right gpg-agent is started
+if [[ ! -f "${HOME}/tmp/gpg-agent.env" ]]; then
+    killall gpg-agent
+    gpg-agent --daemon > "${HOME}/tmp/gpg-agent.env";
 fi
+source "${HOME}/tmp/gpg-agent.env"
+
+export GPG_AGENT_INFO
+export SSH_AUTH_SOCK
 export GPG_TTY=$(tty)
