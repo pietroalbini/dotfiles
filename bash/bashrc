@@ -131,7 +131,10 @@ fi
 
 # Be sure the right gpg-agent is started
 if [[ ! -f "${HOME}/tmp/gpg-agent.env" ]]; then
-    killall gpg-agent
+    if [[ ! -d "${HOME}/tmp" ]]; then
+        mkdir -p "${HOME}/tmp"
+    fi
+    killall gpg-agent >/dev/null 2>&1
     gpg-agent --daemon > "${HOME}/tmp/gpg-agent.env";
 fi
 source "${HOME}/tmp/gpg-agent.env"
