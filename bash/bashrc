@@ -110,7 +110,7 @@ alias gc='git checkout'
 alias gco='git commit'
 alias gp='git push'
 alias gf='git fetch'
-alias gl='git log'
+alias gl='git log --show-signature'
 
 # lxc aliases
 alias lxcl='lxc-ls --fancy'
