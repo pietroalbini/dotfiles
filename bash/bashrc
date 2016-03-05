@@ -117,6 +117,18 @@ alias lxcl='lxc-ls --fancy'
 alias lxcsta='lxc-start -d -n'
 alias lxcsto='lxc-stop -n'
 
+# python aliases
+py() {
+    # Use Python 3 if not into a virtual environment
+    if [[ ! -z "${VIRTUAL_ENV}" ]]; then
+        python $@
+    else
+        python3 $@
+    fi
+}
+alias py2='python2'
+alias py3='python3'
+
 alias pls='sudo $(fc -ln -1)'
 
 # Load extra scripts from .bashrc.d
