@@ -70,6 +70,32 @@ bashrc_ps1_rebuild() {
 
 PROMPT_COMMAND="bashrc_ps1_rebuild"
 
+
+# Allow registering custom command_not_found_handle hooks
+# This allows to hook into it, for example adding new special commands
+_bashrc_cnf_handlers=()
+
+bashrc_cnf_handler() {
+    _bashrc_cnf_handlers=("${_bashrc_cnf_handlers[@]}" "$1")
+}
+
+
+# Custom command_not_found_handle
+# If a custom handle returns exit code 100, then no more handlers are processed
+command_not_found_handle() {
+    # Execute all the custom handlers
+    for handler in "${_bashrc_cnf_handlers[@]}"; do
+        eval "${handler}" "$1"
+        if [[ "$?" -eq 100 ]]; then
+            return
+        fi
+    done
+
+    echo -e "\e[1;31mCommand not found! \e[1;00m$1"
+    return 1
+}
+
+
 # Use the English language
 export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
