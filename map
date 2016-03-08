@@ -17,3 +17,4 @@ ssh/config  ~/.ssh/config
 terminator  ~/.config/terminator
 
 gpg/gpg.conf  ~/.gnupg/gpg.conf
+gpg/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
