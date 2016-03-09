@@ -18,6 +18,25 @@ shopt -s checkwinsize  # Check windows size every command
 shopt -s globstar  # Enable **
 
 
+# Allow registering custom after_command hooks
+# This allows you to execute code after every other command
+
+_bashrc_after_command=()
+
+bashrc_after_command() {
+    _bashrc_after_command=("$1" "${_bashrc_after_command[@]}")
+}
+
+bashrc_after_command_execute() {
+    # Execute all the custom handlers
+    for handler in "${_bashrc_after_command[@]}"; do
+        eval "${handler}"
+    done
+}
+
+PROMPT_COMMAND="bashrc_after_command_execute"
+
+
 # Customize the PS1, adding callbacks to add things before and after it
 # Use bashrc_ps1_before and bashrc_ps1_after to do so
 
@@ -67,8 +86,7 @@ bashrc_ps1_rebuild() {
     export PS1
 }
 
-
-PROMPT_COMMAND="bashrc_ps1_rebuild"
+bashrc_after_command "bashrc_ps1_rebuild"
 
 
 # Allow registering custom command_not_found_handle hooks
