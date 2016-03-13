@@ -6,6 +6,11 @@
 #  ...    => cd ../..
 #  ...... => cd ../../../../../..
 #
+# This also supports just executing a command in a parent directory and
+# returning back to current one:
+#
+# .. pwd  => _current=`pwd`; cd ..; pwd; cd $_current
+#
 # By default this script overrides the command_not_found_handle and
 # PROMPT_COMMAND in bash, which can have side effects (for example losing your
 # default distribution one), but with my dotfiles it simply hook into my custom
@@ -16,31 +21,42 @@
 
 
 # /dev/shm is stored in RAM
-_CDBACK_PATH="/dev/shm/bashrc-cdback-${USER}-${BASHPID}"
+_CDBACK_PATH_DOTS="/dev/shm/bashrc-cdback-${USER}-${BASHPID}-dots"
+_CDBACK_PATH_CMD="/dev/shm/bashrc-cdback-${USER}-${BASHPID}-cmd"
 
 
 # Pass the real command as first argument
 _cdback_command() {
     arg="$1"
+    shift
+    cmd="$@"
 
     # Count the number of dots in the command
-    count="`echo "$1" | grep -o "\." | wc -l`"
+    count="`echo "${arg}" | grep -o "\." | wc -l`"
     dots=$(( count - 1 ))
 
     # If there are other chars abort
-    if [[ "${#1}" -ne "${count}" ]]; then
+    if [[ "${#arg}" -ne "${count}" ]]; then
         return 1
     fi
 
-    # Prepare the storage file
-    touch "${_CDBACK_PATH}"
-    chmod 0600 "${_CDBACK_PATH}"
+    # Prepare the storage files
+    touch "${_CDBACK_PATH_DOTS}"
+    chmod 0600 "${_CDBACK_PATH_DOTS}"
+    if [[ "${cmd}" != "" ]]; then
+        touch "${_CDBACK_PATH_CMD}"
+        chmod 0600 "${_CDBACK_PATH_CMD}"
+    fi
 
     # The number of dots is saved into a file, which will be read by
     # $PROMPT_COMMAND which will execute the `cd`s later. It's implemented this
     # way because it's not possible to have `cd`s executed there propagate to
     # the main shell, since this is treated like a standalone command
-    echo "${dots}" > "${_CDBACK_PATH}"
+    echo "${dots}" > "${_CDBACK_PATH_DOTS}"
+
+    if [[ "${cmd}" != "" ]]; then
+        echo "${cmd}" > "${_CDBACK_PATH_CMD}"
+    fi
 
 }
 
@@ -48,13 +64,20 @@ _cdback_command() {
 _cdback_after_command() {
     # If the custom command was called before, execute its core logic there.
     # You can read an explaination on why this is implemented this way above.
-    if [[ -f "${_CDBACK_PATH}" ]]; then
-        dots="`cat "${_CDBACK_PATH}"`"
+    if [[ -f "${_CDBACK_PATH_DOTS}" ]]; then
+        current="`pwd`"
+
+        dots="`cat "${_CDBACK_PATH_DOTS}"`"
         for ((i=0;i<"${dots}";i++)); do
             cd ..
         done
 
-        rm "${_CDBACK_PATH}"
+        if [[ -f "${_CDBACK_PATH_CMD}" ]]; then
+            eval "`cat "${_CDBACK_PATH_CMD}"`"
+            cd "${current}"
+        fi
+
+        rm -f "${_CDBACK_PATH_DOTS}" "${_CDBACK_PATH_CMD}"
     fi
 }
 
@@ -68,7 +91,7 @@ if type bashrc_cnf_handler >/dev/null 2>&1 \
 
     _cdback_integrations_bashrc() {
         # 100 means to stop executing the other hooks
-        if _cdback_command "$1"; then
+        if _cdback_command $@; then
             return 100
         else
             return 0

@@ -103,7 +103,7 @@ bashrc_cnf_handler() {
 command_not_found_handle() {
     # Execute all the custom handlers
     for handler in "${_bashrc_cnf_handlers[@]}"; do
-        eval "${handler}" "$1"
+        eval "${handler}" $@
         if [[ "$?" -eq 100 ]]; then
             return
         fi
