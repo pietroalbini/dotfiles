@@ -187,14 +187,16 @@ if [[ -f "${HOME}/.bashrc_local" ]]; then
 fi
 
 # Be sure the right gpg-agent is started
-if [[ ! -f "${HOME}/tmp/gpg-agent.env" ]]; then
-    if [[ ! -d "${HOME}/tmp" ]]; then
-        mkdir -p "${HOME}/tmp"
+if which gpg-agent >/dev/null 2>&1; then
+    if [[ ! -f "${HOME}/tmp/gpg-agent.env" ]]; then
+        if [[ ! -d "${HOME}/tmp" ]]; then
+            mkdir -p "${HOME}/tmp"
+        fi
+        killall gpg-agent >/dev/null 2>&1
+        gpg-agent --daemon > "${HOME}/tmp/gpg-agent.env";
     fi
-    killall gpg-agent >/dev/null 2>&1
-    gpg-agent --daemon > "${HOME}/tmp/gpg-agent.env";
+    source "${HOME}/tmp/gpg-agent.env"
 fi
-source "${HOME}/tmp/gpg-agent.env"
 
 export GPG_AGENT_INFO
 export SSH_AUTH_SOCK
