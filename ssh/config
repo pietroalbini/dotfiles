@@ -3,6 +3,11 @@ Host winter
     HostName winter.pietroalbini.io
     ForwardAgent yes
 
+Host fall
+    HostName fall.pietroalbini.io
+    ForwardAgent yes
+    User manage
+
 # code.ubuntu-it.org runs on a different port
 Host code.ubuntu-it.org
     Port 2222
