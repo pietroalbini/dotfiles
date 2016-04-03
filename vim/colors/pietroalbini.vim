@@ -79,6 +79,9 @@ hi link gitcommitSelectedType String
 hi link gitcommitDiscarded Comment
 hi link gitcommitDiscardedType Comment
 
+" rst syntax
+hi link rstSections Type
+
 " I know I shouldn't do this, but that's the only way to remove colors on the
 " header of a section, unfortunately
 autocmd FileType gitcommit :syntax clear gitcommitHeader

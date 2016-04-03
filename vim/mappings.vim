@@ -33,3 +33,19 @@ nnoremap <leader>ev :Unite file_rec/async -start-insert -default-action=vsplit
             \<CR>
 nnoremap <leader>et :Unite file_rec/async -start-insert
             \ -default-action=tabopen<CR>
+
+"
+" rst-specific mappings
+"
+
+" <leader>H makes a page heading
+autocmd FileType rst nnoremap <buffer> <leader>H "zyy"zpV:s/./=/g<CR>"zyyk"zPj
+
+" <leader>-h= makes a section heading with =
+autocmd FileType rst nnoremap <buffer> <leader>h1 "zyy"zpV:s/./=/g<CR>k
+
+" <leader>-h- makes a section heading with -
+autocmd FileType rst nnoremap <buffer> <leader>h2 "zyy"zpV:s/./-/g<CR>k
+
+" <leader>-h~ makes a section heading with ~
+autocmd FileType rst nnoremap <buffer> <leader>h3 "zyy"zpV:s/./\~/g<CR>k
