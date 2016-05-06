@@ -23,6 +23,7 @@ set mouse=a
 
 " Truncate too long lines
 set textwidth=79
+autocmd FileType gitcommit :setlocal textwidth=72
 
 " Line numbers
 set number
