@@ -82,6 +82,13 @@ hi link gitcommitDiscardedType Comment
 " rst syntax
 hi link rstSections Type
 
+" rust syntax
+hi link rustModPath Identifier
+hi link rustModPathSep Identifier
+hi link rustSelf Identifier
+hi link rustAttribute Comment
+hi link rustDerive Comment
+
 " I know I shouldn't do this, but that's the only way to remove colors on the
 " header of a section, unfortunately
 autocmd FileType gitcommit :syntax clear gitcommitHeader
