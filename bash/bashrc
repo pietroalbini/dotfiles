@@ -156,6 +156,7 @@ alias gco='git commit'
 alias gp='git push'
 alias gf='git fetch'
 alias gl='git log --show-signature'
+alias glo='git log --oneline --graph'
 
 # lxc aliases
 alias lxcl='lxc-ls --fancy'
