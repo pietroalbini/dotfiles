@@ -26,7 +26,7 @@ function nearest_venv () {
     found=0
     while [[ ${next} -eq 1 ]]; do
         # Search for a venv in the directory
-        env_path="`readlink -f ${directory}/${env_name}`"
+        env_path="`readlink -f "${directory}/${env_name}"`"
         if [[ -f "${env_path}/bin/activate" ]]; then
             next=0
             found=1
@@ -36,7 +36,7 @@ function nearest_venv () {
             directory="${directory}/.."
         fi
         # Block on the root to prevent infinite loop
-        if [[ "`readlink -f ${directory}`" = "/" ]]; then
+        if [[ "`readlink -f "${directory}"`" = "/" ]]; then
             if [[ ${last} -eq 0 ]]; then
                 last=1
             else
@@ -47,7 +47,7 @@ function nearest_venv () {
 
     # If a result was found return it, else exit with error
     if [[ ${found} -eq 1 ]]; then
-        echo "`readlink -f ${env_path}`"
+        echo "`readlink -f "${env_path}"`"
         return 0
     else
         return 1
