@@ -42,9 +42,3 @@ as_built() {
         echo "${path}  ${commit}" >> "${BUILDS_FILE}"
     fi
 }
-
-# Compile vimproc
-if needs_build "vim/bundle/vimproc"; then
-    make -C "${DOTFILES}/vim/bundle/vimproc"
-    as_built "vim/bundle/vimproc"
-fi
