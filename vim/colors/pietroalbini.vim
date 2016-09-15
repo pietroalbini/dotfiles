@@ -89,6 +89,9 @@ hi link rustSelf Identifier
 hi link rustAttribute Comment
 hi link rustDerive Comment
 
+" toml syntax
+hi link tomlTable Special
+
 " I know I shouldn't do this, but that's the only way to remove colors on the
 " header of a section, unfortunately
 autocmd FileType gitcommit :syntax clear gitcommitHeader
