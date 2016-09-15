@@ -25,15 +25,6 @@ nnoremap L V<esc>`>
 " Exit insert mode easily
 inoremap jk <esc>
 
-" Setup Unite
-nnoremap <leader>ef :Unite file_rec/async -start-insert<cr>
-nnoremap <leader>es :Unite file_rec/async -start-insert -default-action=split
-            \<CR>
-nnoremap <leader>ev :Unite file_rec/async -start-insert -default-action=vsplit
-            \<CR>
-nnoremap <leader>et :Unite file_rec/async -start-insert
-            \ -default-action=tabopen<CR>
-
 "
 " rst-specific mappings
 "

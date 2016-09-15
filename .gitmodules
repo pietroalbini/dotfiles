@@ -7,12 +7,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/markdown
 	url = https://github.com/plasticboy/vim-markdown
-[submodule "vim/bundle/vimproc"]
-	path = vim/bundle/vimproc
-	url = https://github.com/Shougo/vimproc.vim
-[submodule "vim/bundle/unite"]
-	path = vim/bundle/unite
-	url = https://github.com/Shougo/unite.vim
 [submodule "vim/bundle/pathogen"]
 	path = vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen

@@ -75,11 +75,6 @@ nnoremap <leader>rc :vsplit $MYVIMRC<cr>:autocmd BufWritePost $MYVIMRC :bd<cr>
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
-" Some configuration for unite
-if executable('ag')
-    let g:unite_source_rec_async_command = 'ag --follow --nocolor --nogroup --hidden -g ""'
-endif
-
 " Some configuration for gitgutter
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_modified = "|"
