@@ -84,11 +84,20 @@ hi GitGutterChange cterm=bold ctermfg=221 ctermbg=NONE
 hi GitGutterDelete cterm=bold ctermfg=160 ctermbg=NONE
 hi link GitGutterChangeDelete GitGutterChange
 
+" Ctrl-P configuration
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_user_command = {
+\   'types': {
+\       1: ['.git', 'cd %s && git ls-files -co --exclude-standard'],
+\   },
+\   'fallback': 'find %s -type f'
+\ }
+
 
 call s:source("mappings.vim")
 
 " Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
+nmap <C-O> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
     if !exists("*synstack")
         return

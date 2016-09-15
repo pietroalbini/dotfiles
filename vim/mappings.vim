@@ -25,6 +25,15 @@ nnoremap L V<esc>`>
 " Exit insert mode easily
 inoremap jk <esc>
 
+
+"
+" Ctrl-P specific mappings
+"
+nnoremap <leader>ef :CtrlP<CR>
+nnoremap <leader>es :new<CR>:CtrlP<CR>
+nnoremap <leader>ev :vnew<CR>:CtrlP<CR>
+
+
 "
 " rst-specific mappings
 "
