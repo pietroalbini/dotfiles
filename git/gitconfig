@@ -1,6 +1,6 @@
 [user]
     name = Pietro Albini
-    email = pietro@pietroalbini.io
+    email = pietro@pietroalbini.org
     signingkey = 6F58BCDA
 [core]
     excludesfile = ~/.gitignore
