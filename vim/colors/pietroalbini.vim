@@ -85,6 +85,9 @@ hi link rstSections Type
 " rust syntax
 hi link rustModPath Identifier
 hi link rustModPathSep Identifier
+hi link rustEnum Identifier
+hi link rustEnumVariant Idetifier
+hi link rustType Identifier
 hi link rustSelf Identifier
 hi link rustAttribute Comment
 hi link rustDerive Comment
