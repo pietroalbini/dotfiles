@@ -95,6 +95,12 @@ hi link rustDerive Comment
 " toml syntax
 hi link tomlTable Special
 
+" make syntax
+hi link makeCommands Identifier
+hi link makeTarget Constant
+hi link makeIdent Type
+hi makeSpecial cterm=bold ctermfg=15 ctermbg=NONE
+
 " I know I shouldn't do this, but that's the only way to remove colors on the
 " header of a section, unfortunately
 autocmd FileType gitcommit :syntax clear gitcommitHeader
