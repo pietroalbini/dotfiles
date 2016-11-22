@@ -142,6 +142,7 @@ alias ll='ls -al'
 alias l='ls'
 alias c='clear'
 alias v='vim'
+alias m='make'
 alias rebash="source ~/.bashrc"
 
 # git aliases
