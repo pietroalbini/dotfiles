@@ -37,6 +37,6 @@
 
 
 # Specific configuration for my personal git server
-[url "git@git.pietroalbini.io:"]
+[url "git@git.me.pietroalbini.org:"]
     # A pretty alias
-    insteadof = "personal:"
+    insteadof = "me:"
