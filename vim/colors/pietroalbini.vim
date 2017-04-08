@@ -95,6 +95,9 @@ hi link rustDerive Comment
 " toml syntax
 hi link tomlTable Special
 
+" sass/css syntax
+hi link sassVariable Type
+
 " make syntax
 hi link makeCommands Identifier
 hi link makeTarget Constant
