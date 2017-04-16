@@ -47,6 +47,13 @@ autocmd FileType rst :setlocal shiftwidth=3 softtabstop=3
 autocmd FileType yaml :setlocal shiftwidth=2 softtabstop=2
 autocmd FileType make :setlocal noexpandtab
 
+" Set up folding
+set foldenable
+set foldlevelstart=99
+set foldnestmax=10
+set foldmethod=indent
+nnoremap <space> za
+
 " Some search settings
 set incsearch  " Start searching as of typing
 
