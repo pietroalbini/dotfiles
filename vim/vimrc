@@ -18,6 +18,9 @@ endfunction
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+" Enable vim: lines at the start of the file
+set modelines=20
+
 " Yes, I use this sometimes...
 set mouse=a
 
