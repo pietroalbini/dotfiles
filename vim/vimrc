@@ -68,9 +68,6 @@ set splitbelow splitright
 " Load also the 2 lines above/below when scrolling
 set scrolloff=2
 
-" Setup colorline
-set cursorline
-
 " Highlight too long lines
 match ErrorMsg '\%>79v.\+'
 
@@ -89,10 +86,6 @@ let g:vim_markdown_frontmatter=1
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_modified = "|"
 let g:gitgutter_sign_modified_removed = "|"
-hi GitGutterAdd cterm=bold ctermfg=83 ctermbg=NONE
-hi GitGutterChange cterm=bold ctermfg=221 ctermbg=NONE
-hi GitGutterDelete cterm=bold ctermfg=160 ctermbg=NONE
-hi link GitGutterChangeDelete GitGutterChange
 
 " Ctrl-P configuration
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
