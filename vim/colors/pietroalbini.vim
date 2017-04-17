@@ -149,6 +149,7 @@ hi link rustEnum Identifier
 hi link rustEnumVariant Idetifier
 hi link rustType Identifier
 hi link rustSelf Identifier
+hi link rustLabel rustLifetime
 hi link rustAttribute _themeColorGrey
 hi link rustDerive _themeColorGrey
 
