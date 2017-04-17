@@ -20,7 +20,6 @@ hi _themeColorGrey ctermfg=240 ctermbg=NONE
 hi _themeColorPurple ctermfg=141 ctermbg=NONE
 hi _themeColorWhile ctermfg=15 ctermbg=NONE
 hi _themeColorGreen ctermfg=83 ctermbg=NONE
-hi _themeColorYellow ctermfg=221 ctermbg=NONE
 
 hi _themeHighlight cterm=bold ctermfg=221
 
@@ -62,7 +61,7 @@ hi clear String
 hi link Comment _themeColorGrey
 hi link Type _themeColorBlue
 hi link Identifier _themeColorWhite
-hi link Statement _themeColorYellow
+hi link Statement _themeColorBlue
 hi link PreProc _themeColorBlue
 hi link Constant _themeColorPurple
 hi link Special _themeColorPurple
@@ -89,9 +88,9 @@ hi htmlLink ctermfg=15 ctermbg=NONE cterm=underline
 " }}}
 " CSS syntax {{{
 
-hi link atKeyword _themeColorYellow
-hi link cssClassName _themeColorYellow
-hi link cssIdentifier _themeColorYellow
+hi link atKeyword _themeColorBlue
+hi link cssClassName _themeColorBlue
+hi link cssIdentifier _themeColorBlue
 hi link cssProp _themeColorBlue
 hi link cssAttr _themeColorWhite
 
@@ -105,7 +104,7 @@ hi link shDerefOp shShellVariables
 hi link shDerefDelim shShellVariables
 
 " }}}
-" JavaScript syntax {{{
+" JavaScript synt ax {{{
 
 hi link javaScriptIdentifier Keyword
 hi link javaScriptFunction Keyword
@@ -145,11 +144,16 @@ hi link rstSections _themeColorBlue
 
 hi link rustModPath Identifier
 hi link rustModPathSep Identifier
+hi link rustFoldBraces Identifier
+
 hi link rustEnum Identifier
 hi link rustEnumVariant Idetifier
+
 hi link rustType Identifier
 hi link rustSelf Identifier
+
 hi link rustLabel rustLifetime
+
 hi link rustAttribute _themeColorGrey
 hi link rustDerive _themeColorGrey
 
