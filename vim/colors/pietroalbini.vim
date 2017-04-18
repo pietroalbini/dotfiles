@@ -154,7 +154,9 @@ hi link rustEnumVariant Idetifier
 
 hi link rustType Identifier
 hi link rustSelf Identifier
+
 hi link rustMacro Identifier
+hi link rustAssert rustMacro
 
 hi link rustLabel rustLifetime
 
