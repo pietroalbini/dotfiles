@@ -18,7 +18,7 @@ endif
 hi _themeColorBlue ctermfg=74 ctermbg=NONE
 hi _themeColorGrey ctermfg=240 ctermbg=NONE
 hi _themeColorPurple ctermfg=141 ctermbg=NONE
-hi _themeColorWhile ctermfg=15 ctermbg=NONE
+hi _themeColorWhite ctermfg=15 ctermbg=NONE
 hi _themeColorGreen ctermfg=83 ctermbg=NONE
 
 hi _themeHighlight cterm=bold ctermfg=221
@@ -29,8 +29,10 @@ hi _themeHighlight cterm=bold ctermfg=221
 hi clear LineNr
 hi clear Search
 hi clear IncSearch
+hi clear NonText
 
 hi link LineNr _themeColorGrey
+hi link NonText _themeColorGrey
 hi CursorLineNr ctermfg=15 ctermbg=234
 hi ColorColumn ctermfg=15 ctermbg=234
 hi Visual ctermbg=236
@@ -97,6 +99,7 @@ hi link cssAttr _themeColorWhite
 " }}}
 " bash syntax {{{
 
+hi link shOption _themeColorWhite
 hi link shQuote shString
 hi link shShellVariables _themeColorBlue
 hi link shDeref shShellVariables
@@ -151,6 +154,7 @@ hi link rustEnumVariant Idetifier
 
 hi link rustType Identifier
 hi link rustSelf Identifier
+hi link rustMacro Identifier
 
 hi link rustLabel rustLifetime
 
@@ -183,6 +187,11 @@ hi link vimGroup _themeColorWhite
 
 hi link vimHiAttrib _themeColorPurple
 hi link vimHiKeyList _themeColorWhite
+
+" }}}
+" Jinja syntax {{{
+
+hi link jinjaString String
 
 " }}}
 
