@@ -61,6 +61,7 @@ hi clear Special
 hi clear String
 
 hi link Comment _themeColorGrey
+hi link SpecialComment _themeColorGrey
 hi link Type _themeColorBlue
 hi link Identifier _themeColorWhite
 hi link Statement _themeColorBlue
