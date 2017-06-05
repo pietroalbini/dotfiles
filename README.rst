@@ -23,17 +23,12 @@ If you want to apply this configuration to a machine, you should run the
 That script will **erase all the existing dotfiles matching the ones it will
 install**, and install the dotfiles in their final location, using symlinks.
 
+The script will apply by default the basic dotfiles. To get the full
+workstation dotfiles you need to run::
+
+   $ ./apply.sh workstation
+
 The whole process will take a while, especially because the vim configuration
-contains quite a few nested submodules, and it will require compilation of some
-binary vim extensions (vimproc and youcompleteme).
-
-Because of that, the first time you apply the dotfiles you may need to install
-a C compiler. You can install it in Debian/Ubuntu with the following command::
-
-   $ apt install build-essentials
-
-Also, in order to get the best from unite.vim, you need ``ag``::
-
-   $ apt install silversearcher-ag
+contains quite a few nested submodules.
 
 .. _UNLICENSE: http://unlicense.org/

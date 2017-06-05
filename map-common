@@ -1,0 +1,13 @@
+# The symlinks map
+#
+# Syntax: Each line must have a symlink, and origin and dest must be separated
+# by two spaces.
+
+bash/bashrc  ~/.bashrc
+bash/bashrc.d/common  ~/.bashrc.d/common
+
+git/gitconfig  ~/.gitconfig
+git/gitignore  ~/.gitignore
+
+vim  ~/.vim
+vim/vimrc  ~/.vimrc

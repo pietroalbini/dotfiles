@@ -4,8 +4,8 @@
 # Released under the UNLICENSE license, aka public domain
 
 # Require external scripts
-source "${HOME}/.bashrc.d/external/git-completion.sh"
-source "${HOME}/.bashrc.d/external/git-prompt.sh"
+source "${HOME}/.bashrc.d/common/external/git-completion.sh"
+source "${HOME}/.bashrc.d/common/external/git-prompt.sh"
 
 # Complete also the "g" alias
 __git_complete g __git_main

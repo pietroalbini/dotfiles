@@ -119,7 +119,7 @@ export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
 
 # Dynamically build the $PATH
-PATH="${HOME}/.bashrc.d/bin:"
+PATH="${HOME}/.bashrc.d/common/bin:"
 for prefix in "${HOME}/.local" "/usr/local" "/usr"; do
     PATH="${PATH}:${prefix}/sbin:${prefix}/bin:${prefix}/games"
 done
@@ -179,27 +179,15 @@ alias py3='python3'
 alias pls='sudo $(fc -ln -1)'
 
 # Load extra scripts from .bashrc.d
-for file in `ls "${HOME}"/.bashrc.d/*.sh`; do
-    source "${file}"
+for module in "${HOME}"/.bashrc.d/*; do
+    if [[ -d "${module}" ]]; then
+        for file in "${module}"/*.sh; do
+            source "${file}"
+        done
+    fi
 done
 
 # Load also the .bashrc_local file
 if [[ -f "${HOME}/.bashrc_local" ]]; then
     source "${HOME}/.bashrc_local"
 fi
-
-# Be sure the right gpg-agent is started
-if which gpg-agent >/dev/null 2>&1; then
-    if [[ ! -f "${HOME}/tmp/gpg-agent.env" ]]; then
-        if [[ ! -d "${HOME}/tmp" ]]; then
-            mkdir -p "${HOME}/tmp"
-        fi
-        killall gpg-agent >/dev/null 2>&1
-        gpg-agent --daemon > "${HOME}/tmp/gpg-agent.env";
-    fi
-    source "${HOME}/tmp/gpg-agent.env"
-fi
-
-export GPG_AGENT_INFO
-export SSH_AUTH_SOCK
-export GPG_TTY=$(tty)
