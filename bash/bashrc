@@ -143,6 +143,8 @@ alias l='ls'
 alias c='clear'
 alias v='vim'
 alias m='make'
+alias s='sudo'
+alias sv='sudo -E vim'
 alias rebash="source ~/.bashrc"
 
 # git aliases
@@ -159,11 +161,6 @@ alias gf='git fetch'
 alias gl='git log --show-signature'
 alias glo='git log --oneline --graph'
 
-# lxc aliases
-alias lxcl='lxc-ls --fancy'
-alias lxcsta='lxc-start -d -n'
-alias lxcsto='lxc-stop -n'
-
 # python aliases
 py() {
     # Use Python 3 if not into a virtual environment
@@ -175,8 +172,6 @@ py() {
 }
 alias py2='python2'
 alias py3='python3'
-
-alias pls='sudo $(fc -ln -1)'
 
 # Load extra scripts from .bashrc.d
 for module in "${HOME}"/.bashrc.d/*; do
