@@ -114,6 +114,11 @@ command_not_found_handle() {
 }
 
 
+# Debian packaging information
+export DEBFULLNAME="Pietro Albini"
+export DEBEMAIL="pietro@pietroalbini.org"
+export UBUMAIL="pietro@pietroalbini.org"
+
 # Use the English language
 export LANG="en_US.utf8"
 export LC_ALL="en_US.utf8"
