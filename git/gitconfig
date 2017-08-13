@@ -40,3 +40,5 @@
 [url "git@git.me.pietroalbini.org:"]
     # A pretty alias
     insteadof = "me:"
+[gpg]
+	program = gpg2
