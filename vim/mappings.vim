@@ -15,8 +15,13 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 vnoremap <leader>' <esc>`<i'<esc>`>lli'<esc>
 vnoremap <leader>" <esc>`<i"<esc>`>lli"<esc>
 
-" <leader>w will rewrap the current paragraph
+" <leader>w will rewrap the current paragraph or selection
 nnoremap <leader>w vipgq
+vnoremap <leader>w gq
+
+" <leader>s will sort the lines in the current paragraph or selection
+nnoremap <leader>s vip:sort<CR>
+vnoremap <leader>s :sort<CR>
 
 " H will move you to the start of the line, and L to the end
 nnoremap H V<esc>`<
