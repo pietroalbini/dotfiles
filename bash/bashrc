@@ -206,6 +206,18 @@ http() {
     python3 -m http.server "${port}"
 }
 
+# Notify if a command succeded
+notify() {
+    $@
+
+    result="$?"
+    if [[ "${result}" -eq 0 ]]; then
+        notify-send "Command succeded" "$@" -u critical --icon dialog-apply
+    else
+        notify-send "Command failed" "$@" -u critical --icon process-stop
+    fi
+}
+
 # Load extra scripts from .bashrc.d
 for module in "${HOME}"/.bashrc.d/*; do
     if [[ -d "${module}" ]]; then
