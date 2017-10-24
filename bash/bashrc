@@ -208,13 +208,14 @@ http() {
 
 # Notify if a command succeded
 notify() {
+    cmd="$@"
     $@
 
     result="$?"
     if [[ "${result}" -eq 0 ]]; then
-        notify-send "Command succeded" "$@" -u critical --icon dialog-apply
+        notify-send "Command succeded" "${cmd}" -u critical --icon dialog-apply
     else
-        notify-send "Command failed" "$@" -u critical --icon process-stop
+        notify-send "Command failed" "${cmd}" -u critical --icon process-stop
     fi
 }
 
