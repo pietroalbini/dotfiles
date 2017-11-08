@@ -21,3 +21,8 @@ Host roadhouse
 Host magog
     HostName magog.canonical.com
     User pietroalbini
+
+# Fix username and add a pretty host to the unibo share
+Host unibo
+    HostName alfa.csr.unibo.it
+    User pietro.albini@studio.unibo.it
