@@ -1,12 +1,5 @@
-# my own personal box
 Host winter
-    HostName winter.pietroalbini.io
-    ForwardAgent yes
-
-Host fall
-    HostName fall.pietroalbini.io
-    ForwardAgent yes
-    User manage
+    HostName winter.net.pietroalbini.org
 
 # code.ubuntu-it.org runs on a different port
 Host code.ubuntu-it.org
