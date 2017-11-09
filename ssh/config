@@ -26,3 +26,11 @@ Host magog
 Host unibo
     HostName alfa.csr.unibo.it
     User pietro.albini@studio.unibo.it
+
+# Custion configuration for the bastion host
+Host bastion
+    HostName winter.net.pietroalbini.org
+    User bastion
+
+    ForwardAgent yes
+    RequestTTY yes
