@@ -21,6 +21,8 @@
     font = Hack 9
     background_color = "#111111"
     scrollback_infinite = True
+    custom_command = env TERM=xterm-256color bash
+    use_custom_command = True
 [layouts]
   [[default]]
     [[[child1]]]

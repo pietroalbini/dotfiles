@@ -69,7 +69,7 @@ set splitbelow splitright
 set scrolloff=2
 
 " Highlight too long lines
-match ErrorMsg '\%>79v.\+'
+" match ErrorMsg '\%>79v.\+'
 
 " Improve vimrc editing process
 augroup vimrc_reload

@@ -67,7 +67,9 @@ bashrc_ps1_rebuild() {
     if [[ $EUID -eq 0 ]] || [[ ! -z "${PS1_SIMULATE_ROOT}" ]]; then
         PS1+="\[\e[1;35m\]`hostname`\[\e[m\]"
     else
-        PS1+="\[\e[1;36m\]`whoami`@`hostname`\[\e[m\]"
+        hash=$( hostname | sum | awk '{print($1)}')
+        color=$(( hash % 200 ))
+        PS1+="\[\e[1;38;5;${color}m\]`whoami`@`hostname`\[\e[m\]"
     fi
 
     PS1+=": "
@@ -177,6 +179,10 @@ py() {
 }
 alias py2='python2'
 alias py3='python3'
+
+# Tmux aliases
+alias t='tmux -2'
+alias ta='tmux -2 a'
 
 # static web server aliases
 http() {
