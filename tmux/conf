@@ -6,6 +6,9 @@
 # Disable mouse
 set -g mouse off
 
+# Disable automatic renames
+set -g allow-rename off
+
 
 # }}}
 # Keybindings {{{
