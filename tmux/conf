@@ -9,6 +9,9 @@ set -g mouse off
 # Disable automatic renames
 set -g allow-rename off
 
+# Disable delay for ESC
+set -s escape-time 0
+
 
 # }}}
 # Keybindings {{{
