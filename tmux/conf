@@ -28,6 +28,10 @@ bind - split-window -v -c "#{pane_current_path}"
 unbind '"'
 unbind %
 
+# Create new windows in the current directory
+unbind c
+bind c new-window -c "#{pane_current_path}"
+
 # Use <prefix>-r to reload the configuration
 bind r source-file ~/.tmux.conf
 
