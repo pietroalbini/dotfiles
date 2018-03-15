@@ -8,7 +8,6 @@ Host code.ubuntu-it.org
 # fix username and add a pretty host to the ubuntu-it box
 Host roadhouse
     HostName roadhouse.ubuntu-it.org
-    User pietroalbini
 
 # Fix username and add a pretty host to the canonical box
 Host magog
