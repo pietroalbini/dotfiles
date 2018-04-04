@@ -164,7 +164,7 @@ alias ga='git add'
 alias gc='git checkout'
 alias gco='git commit'
 alias gp='git push'
-alias gf='git fetch'
+alias gf='git fetch --prune'
 alias gl='git log --show-signature'
 alias glo='git log --oneline --graph'
 
