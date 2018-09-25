@@ -17,28 +17,20 @@
     # A pretty alias
     insteadof = "github:"
 
-    # Prevent fetching from HTTPS -- only SSH
-    insteadof = "https://github.com/"
-
-
 # Specific configuration for GitLab.com
 [url "git@gitlab.com:"]
     # A pretty alias
     insteadof = "gitlab:"
-
-    # Prevent fetching from HTTPS -- only SSJ
-    insteadof = "https://gitlab.com/"
-
 
 # Specific configuration for code.ubuntu-it.org
 [url "git@code.ubuntu-it.org:"]
     # A pretty alias
     insteadof = "uit:"
 
-
 # Specific configuration for my personal git server
 [url "git@git.me.pietroalbini.org:"]
     # A pretty alias
     insteadof = "me:"
+
 [gpg]
 	program = gpg2
