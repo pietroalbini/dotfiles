@@ -12,6 +12,10 @@ set -g allow-rename off
 # Disable delay for ESC
 set -s escape-time 0
 
+# Properly capture bells
+set -g visual-bell off
+set -g monitor-bell on
+
 
 # }}}
 # Keybindings {{{
@@ -54,8 +58,12 @@ set -g status-left ' '
 set -g status-right "#{?client_prefix,#[fg=colour208]#[bold]Ctrl+A#[default],}  #(~/.tmux/status-right.sh)"
 set -g status-right-length 70
 
-set -g window-status-current-format "#[bg=colour238,fg=colour250] #F#I:#[fg=colour255,bold]#W #[default]"
-set -g window-status-format "#[bg=colour236,fg=colour242] #F#I:#[fg=colour252]#W #[default]"
+set -g window-status-bell-style bg=colour214,fg=colour232
+set -g window-status-current-style bg=colour255,fg=colour232
+set -g window-status-last-style bg=colour238
+set -g window-status-style fg=colour255
+set -g window-status-separator " "
+set -g window-status-format " #I:#W "
 
 set -g pane-border-fg colour236
 set -g pane-active-border-fg colour255
