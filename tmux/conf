@@ -63,6 +63,7 @@ set -g window-status-current-style bg=colour255,fg=colour232
 set -g window-status-last-style bg=colour238
 set -g window-status-style fg=colour255
 set -g window-status-separator " "
+set -g window-status-current-format " #I:#W "
 set -g window-status-format " #I:#W "
 
 set -g pane-border-fg colour236
