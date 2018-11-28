@@ -167,6 +167,8 @@ alias gp='git push'
 alias gf='git fetch --prune'
 alias gl='git log --show-signature'
 alias glo='git log --oneline --graph'
+alias gcp='git cherry-pick'
+alias grb='git rebase'
 alias gwip='git add .; git -c commit.gpgsign=false commit -m "wip"'
 
 # python aliases
