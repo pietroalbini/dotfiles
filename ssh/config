@@ -26,3 +26,36 @@ Host bastion
 
     ForwardAgent yes
     RequestTTY yes
+
+Host rust-bastion
+    HostName 54.215.17.149
+    ProxyCommand ssh pietro@10.98.0.1 -W %h:%p
+
+    ControlPath ~/.ssh/control-%r@%h:%p
+    ControlMaster auto
+    ControlPersist 30m
+
+Host rust-bots
+    HostName 54.215.238.238
+    User ec2-user
+    ProxyCommand ssh rust-bastion -W %h:%p
+
+Host crater-aws-1
+    HostName 54.193.124.229
+    User ec2-user
+    ProxyCommand ssh rust-bastion -W %h:%p
+
+Host crater-aws-2
+    HostName 13.57.209.195
+    User ec2-user
+    ProxyCommand ssh rust-bastion -W %h:%p
+
+Host crater-aws-3
+    HostName 54.183.32.244
+    User ec2-user
+    ProxyCommand ssh rust-bastion -W %h:%p
+
+Host docsrs
+    HostName docsrs.infra.rust-lang.org
+    User ubuntu
+    ProxyCommand ssh rust-bastion -W %h:%p
