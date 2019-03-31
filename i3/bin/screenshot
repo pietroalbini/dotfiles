@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+DEST="data/screenshots"
+
+if ! which scrot >/dev/null 2>&1; then
+    i3-nagbar -m "The 'scrot' package is missing, please install it."
+fi
+
+mkdir -p "${DEST}"
+sleep 0.2  # https://bbs.archlinux.org/viewtopic.php?id=86507
+scrot "${DEST}/%Y-%m-%d--%H-%M-%S.png" $@

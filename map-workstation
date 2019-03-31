@@ -9,3 +9,6 @@ terminator  ~/.config/terminator
 
 gpg/gpg.conf  ~/.gnupg/gpg.conf
 gpg/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+
+i3  ~/.config/i3
+i3status  ~/.config/i3status
