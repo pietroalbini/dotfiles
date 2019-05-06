@@ -3,6 +3,8 @@
 # Syntax: Each line must have a symlink, and origin and dest must be separated
 # by two spaces.
 
+bash/bashrc.d/workstation  ~/.bashrc.d/workstation
+
 ssh/config  ~/.ssh/config
 
 terminator  ~/.config/terminator
