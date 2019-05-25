@@ -155,6 +155,15 @@ alias sv='sudo -E vim'
 alias rebash="source ~/.bashrc"
 
 # git aliases
+gpr() {
+    if [[ $# -ne 1 ]]; then
+        echo "usage: gpr <number>" >&2
+        return 1
+    fi
+    num="$1"
+    git fetch origin "pull/$1/head"
+    git checkout FETCH_HEAD
+}
 alias g='git'
 alias gd='git diff'
 alias gds='git diff --staged'
