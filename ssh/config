@@ -64,3 +64,8 @@ Host docsrs
     HostName docsrs.infra.rust-lang.org
     User ubuntu
     ProxyCommand ssh rust-bastion -W %h:%p
+
+Host rcs rcs.rust-lang.org
+    HostName rcs.infra.rust-lang.org
+    User ubuntu
+    ProxyCommand ssh rust-bastion -W %h:%p
