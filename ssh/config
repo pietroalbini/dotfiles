@@ -19,14 +19,6 @@ Host unibo
     HostName alfa.csr.unibo.it
     User pietro.albini@studio.unibo.it
 
-# Custion configuration for the bastion host
-Host bastion
-    HostName winter.net.pietroalbini.org
-    User bastion
-
-    ForwardAgent yes
-    RequestTTY yes
-
 Host january-agents
     HostName 10.98.1.1
     RemoteForward /home/pietro/.gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
@@ -41,22 +33,12 @@ Host rust-bastion
     ControlPersist 30m
 
 Host rust-bots
-    HostName 54.215.238.238
+    HostName bots.infra.rust-lang.org
     User ec2-user
     ProxyCommand ssh rust-bastion -W %h:%p
 
 Host crater-aws-1
-    HostName 54.193.124.229
-    User ec2-user
-    ProxyCommand ssh rust-bastion -W %h:%p
-
-Host crater-aws-2
-    HostName 13.57.209.195
-    User ec2-user
-    ProxyCommand ssh rust-bastion -W %h:%p
-
-Host crater-aws-3
-    HostName 54.183.32.244
+    HostName crater-aws-1.infra.rust-lang.org
     User ec2-user
     ProxyCommand ssh rust-bastion -W %h:%p
 
