@@ -92,6 +92,9 @@ bindsym $mod+l exec "$lock"
 bindsym Print exec "/home/pietro/.config/i3/bin/screenshot"
 bindsym Shift+Print exec "/home/pietro/.config/i3/bin/screenshot -s"
 
+# passmenu
+bindsym $mod+p exec "/usr/share/doc/pass/examples/dmenu/passmenu"
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
