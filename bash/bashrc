@@ -219,9 +219,11 @@ http() {
         return 1
     fi
 
-    cd "${path}"
-    xdg-open "http://localhost:${port}"
-    python3 -m http.server "${port}"
+    (
+        cd "${path}"
+        bash -c "sleep 1 && xdg-open \"http://localhost:${port}\"" &
+        python3 -m http.server "${port}"
+    )
 }
 
 # Notify if a command succeded
