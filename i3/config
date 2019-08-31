@@ -94,7 +94,8 @@ bindsym Shift+Print exec "/home/pietro/.config/i3/bin/screenshot -s"
 
 # passmenu
 bindsym $mod+p exec "/usr/share/doc/pass/examples/dmenu/passmenu"
-
+# yubikey-oath-menu
+bindsym $mod+y exec "/home/pietro/.config/i3/bin/yubikey-oath-dmenu --notify --clipboard clipboard"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
