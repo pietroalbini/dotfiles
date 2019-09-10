@@ -1,24 +1,3 @@
-Host winter
-    HostName winter.net.pietroalbini.org
-
-# code.ubuntu-it.org runs on a different port
-Host code.ubuntu-it.org
-    Port 2222
-
-# fix username and add a pretty host to the ubuntu-it box
-Host roadhouse
-    HostName roadhouse.ubuntu-it.org
-
-# Fix username and add a pretty host to the canonical box
-Host magog
-    HostName magog.canonical.com
-    User pietroalbini
-
-# Fix username and add a pretty host to the unibo share
-Host unibo
-    HostName alfa.csr.unibo.it
-    User pietro.albini@studio.unibo.it
-
 Host january-agents
     HostName 10.98.1.1
     RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
