@@ -24,8 +24,8 @@ Host january-agents
     RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent.extra
     ForwardAgent yes
 
-Host rust-bastion
-    HostName 54.215.17.149
+Host rust-bastion bastion.infra.rust-lang.org
+    HostName bastion.infra.rust-lang.org
     ProxyCommand ssh pietro@10.98.0.1 -W %h:%p
 
     ControlPath ~/.ssh/control-%r@%h:%p
@@ -35,19 +35,22 @@ Host rust-bastion
 Host rust-bots
     HostName bots.infra.rust-lang.org
     User ec2-user
-    ProxyCommand ssh rust-bastion -W %h:%p
+    ProxyCommand ssh bastion.infra.rust-lang.org -W %h:%p
 
 Host crater-aws-1
     HostName crater-aws-1.infra.rust-lang.org
     User ec2-user
-    ProxyCommand ssh rust-bastion -W %h:%p
+    ProxyCommand ssh bastion.infra.rust-lang.org -W %h:%p
 
 Host docsrs
     HostName docsrs.infra.rust-lang.org
     User ubuntu
-    ProxyCommand ssh rust-bastion -W %h:%p
+    ProxyCommand ssh bastion.infra.rust-lang.org -W %h:%p
 
 Host rcs rcs.rust-lang.org
     HostName rcs.infra.rust-lang.org
     User ubuntu
-    ProxyCommand ssh rust-bastion -W %h:%p
+    ProxyCommand ssh bastion.infra.rust-lang.org -W %h:%p
+
+Host rust-monitoring monitoring.infra.rust-lang.org
+    ProxyCommand ssh bastion.infra.rust-lang.org -W %h:%p
