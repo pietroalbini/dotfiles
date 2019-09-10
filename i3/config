@@ -97,6 +97,10 @@ bindsym $mod+p exec "/usr/share/doc/pass/examples/dmenu/passmenu"
 # yubikey-oath-menu
 bindsym $mod+y exec "/home/pietro/.config/i3/bin/yubikey-oath-dmenu --notify --clipboard clipboard"
 
+# firefox
+bindsym $mod+n exec "firefox --new-window"
+bindsym $mod+m exec "firefox --private-window"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
     # These bindings trigger as soon as you enter the resize mode
