@@ -63,6 +63,9 @@ autocmd FileType rst nnoremap <buffer> <leader>h3 "zyy"zpV:s/./\~/g<CR>k
 " <leader>H makes an heading comment
 autocmd FileType c nnoremap <buffer> <leader>H 0i *  <ESC>$a  *<ESC>"zyy"zP"zpjV:s/./*/g<CR>0r $a/<ESC>kkV:s/./*/g<CR>0r/
 
+" <leader>f formats the source code
+autocmd FileType c nnoremap <buffer> <leader>f :ClangFormat<CR>
+
 "
 " rust-specific mappings
 "

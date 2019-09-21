@@ -37,3 +37,6 @@
 [submodule "vim/bundle/commentary"]
 	path = vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary
+[submodule "vim/bundle/clang-format"]
+	path = vim/bundle/clang-format
+	url = https://github.com/rhysd/vim-clang-format
