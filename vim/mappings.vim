@@ -70,3 +70,8 @@ autocmd FileType c nnoremap <buffer> <leader>f :ClangFormat<CR>
 " rust-specific mappings
 "
 autocmd FileType rust nnoremap <buffer> <leader>f :RustFmt<CR>
+
+"
+" terraform-specific mappings
+"
+autocmd FileType terraform nnoremap <buffer> <leader>f :TerraformFmt<CR>

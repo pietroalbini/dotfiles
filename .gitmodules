@@ -40,3 +40,6 @@
 [submodule "vim/bundle/clang-format"]
 	path = vim/bundle/clang-format
 	url = https://github.com/rhysd/vim-clang-format
+[submodule "vim/bundle/terraform"]
+	path = vim/bundle/terraform
+	url = https://github.com/hashivim/vim-terraform
