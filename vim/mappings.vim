@@ -40,6 +40,13 @@ nnoremap <leader>ev :vnew<CR>:CtrlP<CR>
 
 
 "
+" vim-lsp specific mappings
+"
+
+nnoremap <leader>d :LspPeekDefinition<CR>
+nnoremap <leader>h :LspHover<CR>
+
+"
 " rst-specific mappings
 "
 

@@ -99,6 +99,21 @@ let g:ctrlp_user_command = {
 " vim-terraform configuration
 let g:terraform_align=1
 
+" vim-lsp configuration
+let g:lsp_preview_keep_focus = 0
+
+" vim-lsp + rust-analyzer
+if executable("ra_lsp_server")
+    " git clone https://github.com/rust-analyzer/rust-analyzer
+    " cd rust-analyzer
+    " cargo xtask install --server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'ra',
+        \ 'cmd': {server_info->['ra_lsp_server']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
 call s:source("mappings.vim")
 
 " Show syntax highlighting groups for word under cursor
