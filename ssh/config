@@ -16,10 +16,13 @@ Host rust-bots
     User ec2-user
     ProxyCommand ssh bastion.infra.rust-lang.org -W %h:%p
 
-Host crater-aws-1
+Host crater-aws-1 crater-aws-1.infra.rust-lang.org
     HostName crater-aws-1.infra.rust-lang.org
-    User ec2-user
-    ProxyCommand ssh bastion.infra.rust-lang.org -W %h:%p
+    ProxyJump bastion.infra.rust-lang.org
+
+Host crater-azure-1 crater-azure-1.infra.rust-lang.org
+    HostName crater-azure-1.infra.rust-lang.org
+    ProxyJump bastion.infra.rust-lang.org
 
 Host docsrs
     HostName docsrs.infra.rust-lang.org
