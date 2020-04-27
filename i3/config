@@ -5,6 +5,9 @@ set $lock i3lock -e -f -c 222222 && xset dpms force off && sleep 1 && xset dpms 
 
 font pango:Ubuntu 8
 
+# Enable compton
+exec --no-startup-id compton -b
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -126,6 +129,16 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id "/home/pietro/.config/i3/bin/volume-up"
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Music
+bindsym XF86AudioNext exec --no-startup-id cmus-remote --next
+bindsym XF86AudioPrev exec --no-startup-id cmus-remote --prev
+bindsym XF86AudioPlay exec --no-startup-id cmus-remote --pause
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
