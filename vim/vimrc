@@ -100,16 +100,18 @@ let g:ctrlp_user_command = {
 let g:terraform_align=1
 
 " vim-lsp configuration
-let g:lsp_preview_keep_focus = 0
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_signature_help_enabled = 0
+let g:lsp_signs_error = {'text': 'E:'}
+let g:lsp_signs_warning = {'text': 'W:'}
+let g:lsp_signs_information = {'text': 'I:'}
+let g:lsp_signs_hint = {'text': 'H:'}
 
 " vim-lsp + rust-analyzer
-if executable("ra_lsp_server")
-    " git clone https://github.com/rust-analyzer/rust-analyzer
-    " cd rust-analyzer
-    " cargo xtask install --server
+if executable("rust-analyzer")
     au User lsp_setup call lsp#register_server({
         \ 'name': 'ra',
-        \ 'cmd': {server_info->['ra_lsp_server']},
+        \ 'cmd': {server_info->['rust-analyzer']},
         \ 'whitelist': ['rust'],
         \ })
 endif

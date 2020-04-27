@@ -15,6 +15,8 @@ if exists("syntax on")
 endif
 
 
+hi _themeColorRed ctermfg=160 ctermbg=NONE
+hi _themeColorYellow ctermfg=184 ctermbg=NONE
 hi _themeColorBlue ctermfg=74 ctermbg=NONE
 hi _themeColorGrey ctermfg=240 ctermbg=NONE
 hi _themeColorPurple ctermfg=141 ctermbg=NONE
@@ -209,5 +211,17 @@ hi link GitGutterAdd _themeColorGrey
 hi link GitGutterChange _themeColorGrey
 hi link GitGutterDelete _themeColorGrey
 hi link GitGutterChangeDelete _themeColorGrey
+
+" }}}
+" vim-lsp plugin {{{
+
+hi link LspErrorText _themeColorRed
+hi link LspErrorHighlight none
+hi link LspWarningText _themeColorYellow
+hi link LspWarningHighlight none
+hi link LspInformationText _themeColorWhite
+hi link LspInformationHighlight none
+hi link LspHintText _themeColorWhite
+hi link LspHintHighlight none
 
 " }}}
