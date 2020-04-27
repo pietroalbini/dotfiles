@@ -116,6 +116,16 @@ if executable("rust-analyzer")
         \ })
 endif
 
+" vim-lsp + terraform-lsp
+if executable("terraform-lsp")
+    " https://github.com/juliosueiras/terraform-lsp
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'terraform',
+        \ 'cmd': {server_info->['terraform-lsp']},
+        \ 'whitelist': ['terraform'],
+        \ })
+endif
+
 call s:source("mappings.vim")
 
 " Show syntax highlighting groups for word under cursor
