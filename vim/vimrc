@@ -8,9 +8,9 @@ filetype indent plugin on
 set nocompatible
 
 function! s:source(file)
-    let a:path = $HOME."/.vim/".a:file
-    if !exists(a:path)
-        execute 'source' fnameescape(a:path)
+    let l:path = $HOME."/.vim/".a:file
+    if !exists(l:path)
+        execute 'source' fnameescape(l:path)
     endif
 endfunction
 
@@ -46,6 +46,9 @@ set smartindent
 autocmd FileType rst :setlocal shiftwidth=3 softtabstop=3
 autocmd FileType yaml :setlocal shiftwidth=2 softtabstop=2
 autocmd FileType make :setlocal noexpandtab
+
+" Set up backspace
+set backspace=indent,eol,start
 
 " Set up folding
 set foldenable
