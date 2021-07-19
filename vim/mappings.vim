@@ -43,8 +43,29 @@ nnoremap <leader>ev :vnew<CR>:CtrlP<CR>
 " vim-lsp specific mappings
 "
 
-nnoremap <leader>d :LspPeekDefinition<CR>
-nnoremap <leader>h :LspHover<CR>
+function! s:on_lsp_buffer_enabled() abort
+    nmap <buffer> gD <plug>(lsp-peek-definition)
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> K <plug>(lsp-hover)
+
+    nmap <buffer> <leader>r <plug>(lsp-rename)
+    nmap <buffer> <leader>a <plug>(lsp-code-action)
+endfunction
+
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+"
+" asyncomplete.vim mappings
+"
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 "
 " rst-specific mappings

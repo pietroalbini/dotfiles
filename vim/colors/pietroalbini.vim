@@ -50,6 +50,9 @@ hi StatusLineNC cterm=NONE ctermfg=15 ctermbg=237
 hi StatusLine cterm=bold ctermbg=237
 hi Folded cterm=NONE ctermfg=243 ctermbg=236
 
+hi Pmenu cterm=NONE ctermfg=250 ctermbg=236
+hi PmenuSel cterm=NONE ctermfg=83 ctermbg=236
+
 " }}}
 " General syntax highlight {{{
 
