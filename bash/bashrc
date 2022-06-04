@@ -197,6 +197,7 @@ alias t='tmux -2'
 alias ta='tmux -2 a'
 
 alias tf='terraform'
+alias tg='terragrunt'
 
 # static web server aliases
 http() {
