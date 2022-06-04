@@ -24,6 +24,26 @@ Host crater-azure-1 crater-azure-1.infra.rust-lang.org
     HostName crater-azure-1.infra.rust-lang.org
     ProxyJump bastion.infra.rust-lang.org
 
+Host crater-azure-2 crater-azure-2.infra.rust-lang.org
+    HostName crater-azure-2.infra.rust-lang.org
+    ProxyJump bastion.infra.rust-lang.org
+
+Host crater-gcp-1 crater-gcp-1.infra.rust-lang.org
+    HostName crater-gcp-1.infra.rust-lang.org
+    ProxyJump bastion.infra.rust-lang.org
+
+Host crater-gcp-2 crater-gcp-2.infra.rust-lang.org
+    HostName crater-gcp-2.infra.rust-lang.org
+    ProxyJump bastion.infra.rust-lang.org
+
+Host ci-arm-1 ci-arm-1.infra.rust-lang.org
+    HostName ci-arm-1.infra.rust-lang.org
+    ProxyJump bastion.infra.rust-lang.org
+
+Host play-1 play-1.infra.rust-lang.org
+    HostName play-1.infra.rust-lang.org
+    ProxyJump bastion.infra.rust-lang.org
+
 Host docsrs
     HostName docsrs.infra.rust-lang.org
     User ubuntu
