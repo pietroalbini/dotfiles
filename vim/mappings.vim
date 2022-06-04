@@ -107,4 +107,12 @@ autocmd FileType terraform nnoremap <buffer> <leader>f :TerraformFmt<CR>
 "
 " NERDTree-specific mappings
 "
-nnoremap <leader>t :NERDTreeFocus<CR>
+
+function DotfilesOpenNERDTree()
+    if empty(expand('%:p'))
+        execute 'NERDTreeFocus'
+    else
+        execute 'NERDTreeFind'
+    endif
+endfunction
+nnoremap <leader>t :call DotfilesOpenNERDTree()<CR>
