@@ -103,3 +103,8 @@ autocmd FileType rust nnoremap <buffer> <leader>f :RustFmt<CR>
 " terraform-specific mappings
 "
 autocmd FileType terraform nnoremap <buffer> <leader>f :TerraformFmt<CR>
+
+"
+" NERDTree-specific mappings
+"
+nnoremap <leader>t :NERDTreeFocus<CR>
