@@ -124,7 +124,13 @@ if executable("rustup")
         \     'importMergeBehavior': 'last',
         \     'importPrefix': 'by_crate',
         \     'importGroup': v:false,
-        \   }
+        \   },
+        \   'rustcSource': 'discover',
+        \   'server': {
+        \     'extraEnv': {
+        \       'CARGO_TARGET_DIR': 'target/ra',
+        \     },
+        \   },
         \ }
         \ })
 endif
