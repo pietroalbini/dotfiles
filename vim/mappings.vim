@@ -105,6 +105,12 @@ autocmd FileType rust nnoremap <buffer> <leader>f :RustFmt<CR>
 autocmd FileType terraform nnoremap <buffer> <leader>f :TerraformFmt<CR>
 
 "
+" Python-specific mappingsd
+"
+
+autocmd FileType python nnoremap <buffer> <leader>f :Black<CR>
+
+"
 " NERDTree-specific mappings
 "
 

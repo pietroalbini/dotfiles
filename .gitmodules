@@ -61,3 +61,6 @@
 [submodule "vim/bundle/rst"]
 	path = vim/bundle/rst
 	url = https://github.com/habamax/vim-rst
+[submodule "vim/bundle/black"]
+	path = vim/bundle/black
+	url = https://github.com/psf/black
