@@ -58,3 +58,6 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree
+[submodule "vim/bundle/rst"]
+	path = vim/bundle/rst
+	url = https://github.com/habamax/vim-rst
