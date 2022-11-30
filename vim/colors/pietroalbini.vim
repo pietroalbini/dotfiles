@@ -126,9 +126,10 @@ hi link javaScriptNumber Constant
 " }}}
 " YAML syntax {{{
 
-hi link yamlBlockMappingKey _themeColorBlue
-hi link yamlBlockCollectionItemStart _themeColorBlue
-hi link yamlKeyValueDelimiter _themeColorBlue
+" We're using an autocommand on vim startup to defer setting the highlight
+" after the plugins load.
+au VimEnter * hi link yamlKey _themeColorBlue
+au VimEnter * hi link yamlConstant _themeColorPurple
 
 " }}}
 " git commit syntax {{{
