@@ -120,10 +120,14 @@ if executable("rustup")
         \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rust-analyzer']},
         \ 'whitelist': ['rust'],
         \ 'initialization_options': {
-        \   'assist': {
-        \     'importMergeBehavior': 'last',
-        \     'importPrefix': 'by_crate',
-        \     'importGroup': v:false,
+        \   'imports': {
+        \     'granularity': {
+        \       'group': 'module',
+        \     },
+        \     'group': {
+        \       'enable': v:false,
+        \     },
+        \     'prefix': 'crate',
         \   },
         \   'rustcSource': 'discover',
         \   'server': {
