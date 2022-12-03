@@ -90,6 +90,9 @@ let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_modified = "|"
 let g:gitgutter_sign_modified_removed = "|"
 
+" coc.nvim configuration
+let g:coc_global_extensions = ['coc-rust-analyzer']
+
 " Ctrl-P configuration
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 let g:ctrlp_user_command = {
@@ -101,43 +104,6 @@ let g:ctrlp_user_command = {
 
 " vim-terraform configuration
 let g:terraform_align=1
-
-" vim-lsp configuration
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_signature_help_enabled = 0
-let g:lsp_diagnostics_signs_error = {'text': 'E:'}
-let g:lsp_diagnostics_signs_warning = {'text': 'W:'}
-let g:lsp_diagnostics_signs_information = {'text': 'I:'}
-let g:lsp_diagnostics_signs_hint = {'text': 'H:'}
-let g:lsp_semantic_enabled = 0
-let g:lsp_document_code_action_signs_enabled = 0
-let g:lsp_document_highlight_enabled = 0
-
-" vim-lsp + rust-analyzer
-if executable("rustup")
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'ra',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rust-analyzer']},
-        \ 'whitelist': ['rust'],
-        \ 'initialization_options': {
-        \   'imports': {
-        \     'granularity': {
-        \       'group': 'module',
-        \     },
-        \     'group': {
-        \       'enable': v:false,
-        \     },
-        \     'prefix': 'crate',
-        \   },
-        \   'rustcSource': 'discover',
-        \   'server': {
-        \     'extraEnv': {
-        \       'CARGO_TARGET_DIR': 'target/ra',
-        \     },
-        \   },
-        \ }
-        \ })
-endif
 
 call s:source("mappings.vim")
 

@@ -1,0 +1,15 @@
+{
+    "coc.source.around.enable": false,
+    "coc.source.buffer.enable": "false,
+    "coc.source.file.enable": "false,
+
+    "diagnostic.errorSign": "E: ",
+    "diagnostic.infoSign": "I: ",
+    "diagnostic.warningSign": "W: ",
+    "diagnostic.signLevel": "information",
+
+    "rust-analyzer.imports.granularity.group": "module",
+    "rust-analyzer.imports.group.enable": false,
+    "rust-analyzer.imports.prefix": "crate",
+    "rust-analyzer.rustcSource": "discover"
+}

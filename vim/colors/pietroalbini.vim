@@ -15,7 +15,7 @@ if exists("syntax on")
 endif
 
 
-hi _themeColorRed ctermfg=160 ctermbg=NONE
+hi _themeColorRed ctermfg=196 ctermbg=NONE
 hi _themeColorYellow ctermfg=184 ctermbg=NONE
 hi _themeColorBlue ctermfg=74 ctermbg=NONE
 hi _themeColorGrey ctermfg=240 ctermbg=NONE
@@ -217,15 +217,16 @@ hi link GitGutterDelete _themeColorGrey
 hi link GitGutterChangeDelete _themeColorGrey
 
 " }}}
-" vim-lsp plugin {{{
+" coc.nvim plugin {{{
 
-hi link LspErrorText _themeColorRed
-hi link LspErrorHighlight none
-hi link LspWarningText _themeColorYellow
-hi link LspWarningHighlight none
-hi link LspInformationText _themeColorWhite
-hi link LspInformationHighlight none
-hi link LspHintText _themeColorWhite
-hi link LspHintHighlight none
+hi link CocErrorSign _themeColorRed
+hi link CocWarningSign _themeColorYellow
+hi link CocInfoSign _themeColorBlue
 
-" }}}
+hi link CocErrorHighlight NONE
+hi link CocWarningHighlight NONE
+hi link CocInfoHighlight NONE
+hi link CocHintHighlight NONE
+hi link CocUnusedHighlight NONE
+
+" }}

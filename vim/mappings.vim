@@ -43,29 +43,25 @@ nnoremap <leader>ev :vnew<CR>:CtrlP<CR>
 " vim-lsp specific mappings
 "
 
-function! s:on_lsp_buffer_enabled() abort
-    nmap <buffer> gD <plug>(lsp-peek-definition)
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> K <plug>(lsp-hover)
-
-    nmap <buffer> <leader>r <plug>(lsp-rename)
-    nmap <buffer> <leader>a <plug>(lsp-code-action)
+" Autocompletion
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-augroup lsp_install
-    au!
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-
-"
-" asyncomplete.vim mappings
-"
-
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
+nmap <buffer> gr <plug>(coc-references)
+nmap <silent> gd <plug>(coc-definition)
+nmap <silent> gi <plug>(coc-implementation)
+nmap <buffer> <leader>r <plug>(coc-rename)
+nmap <leader>a <plug>(coc-codeaction-cursor)
 
 "
 " rst-specific mappings

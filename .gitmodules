@@ -67,3 +67,6 @@
 [submodule "vim/bundle/vim-yaml"]
 	path = vim/bundle/vim-yaml
 	url = https://github.com/stephpy/vim-yaml
+[submodule "vim/bundle/coc.nvim"]
+	path = vim/bundle/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
