@@ -5,7 +5,6 @@ Host january-agents
 
 Host rust-bastion bastion.infra.rust-lang.org
     HostName bastion.infra.rust-lang.org
-    ProxyCommand ssh pietro@10.98.0.1 -W %h:%p
 
     ControlPath ~/.ssh/control-%r@%h:%p
     ControlMaster auto
