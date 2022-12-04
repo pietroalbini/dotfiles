@@ -3,6 +3,13 @@
     "coc.source.buffer.enable": "false,
     "coc.source.file.enable": "false,
 
+    // The first tab should select the first element, the first element shouldn't be pre-selected.
+    "suggest.noselect": true,
+
+    // Disable function signature and documentation on hover
+    "signature.target": "echo",
+    "hover.target": "echo",
+
     "diagnostic.errorSign": "E: ",
     "diagnostic.infoSign": "I: ",
     "diagnostic.warningSign": "W: ",
