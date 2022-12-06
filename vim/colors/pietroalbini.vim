@@ -18,7 +18,7 @@ endif
 hi _themeColorRed ctermfg=196 ctermbg=NONE
 hi _themeColorYellow ctermfg=184 ctermbg=NONE
 hi _themeColorBlue ctermfg=74 ctermbg=NONE
-hi _themeColorGrey ctermfg=240 ctermbg=NONE
+hi _themeColorGrey ctermfg=244 ctermbg=NONE
 hi _themeColorPurple ctermfg=141 ctermbg=NONE
 hi _themeColorWhite ctermfg=15 ctermbg=NONE
 hi _themeColorGreen ctermfg=83 ctermbg=NONE
